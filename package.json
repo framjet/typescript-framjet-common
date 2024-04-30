@@ -1,7 +1,7 @@
 {
   "name": "@framjet/common",
   "description": "A suite of essential utilities and TypeScript types for FramJet projects, offering streamlined code integration and enhanced type safety.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "MIT",
   "author": "Aurimas Niekis <aurimas@niekis.lt>",
   "homepage": "https://github.com/framjet/typescript-framjet-common#readme",

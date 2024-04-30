@@ -1,4 +1,3 @@
-
 export type Primitive =
   | null
   | undefined
@@ -28,3 +27,10 @@ export type TypedArray =
   | Float64Array
   | BigInt64Array
   | BigUint64Array;
+
+export type AnyMap<K = unknown, V = unknown> = Map<K, V>;
+export type AnyWeakMap<K extends WeakKey = WeakKey, V = unknown> = WeakMap<K, V>;
+export type AnySet<V = unknown> = Set<V>;
+export type AnyWeakSet<V extends WeakKey = WeakKey> = WeakSet<V>;
+export type AnyWeakRef<V extends WeakKey = WeakKey> = WeakRef<V>;
+export type AnyPromise<V = unknown> = Promise<V>;

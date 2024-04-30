@@ -42,7 +42,7 @@ export type ExactKey<T extends object, Key extends PropertyKey> =
         : never;
 
 
-export type Simplify<T> = {[KeyType in keyof T]: T[KeyType]} & {};
+export type Simplify<T> = {[K in keyof T]: T[K]} & unknown;
 
 export type UndefinedToOptional<T extends object> = Simplify<
   {

@@ -61,15 +61,15 @@ export function func<
   options?: Partial<MemoizeFnOptions<Fn, Resolver, Store>>
 ): MemoizeFn<Fn, MemoizeFnOptions<Fn, Resolver, Store>> {
   const resolvedOptions: MemoizeFnOptions<Fn, Resolver, Store> = {
-    maxSize: options.maxSize ?? 500,
-    createStore: options.createStore ?? ((maxSize: number) => new LRU<ReturnType<Resolver>, ReturnType<Fn>>(maxSize) as any),
-    beforeCall: options.beforeCall ?? (() => {
+    maxSize: options?.maxSize ?? 500,
+    createStore: options?.createStore ?? ((maxSize: number) => new LRU<ReturnType<Resolver>, ReturnType<Fn>>(maxSize) as any),
+    beforeCall: options?.beforeCall ?? (() => {
       // nop
     }),
-    afterCall: options.afterCall ?? (() => {
+    afterCall: options?.afterCall ?? (() => {
       // nop
     }),
-    resolver: options.resolver ?? ((args: Parameters<Fn>) => args) as any
+    resolver: options?.resolver ?? ((args: Parameters<Fn>) => args) as any
   };
 
   const memoFnStore = container().get('framjet.cache.memoize-fn') as AnyStringLRU<Store>;
@@ -87,7 +87,7 @@ export function func<
 
   const func = ((...args: Parameters<Fn>) => {
     let useCache = true;
-    let cacheKey = this._memoizedFn.getOptions().resolver(...args);
+    let cacheKey = func._memoizedFn.getOptions().resolver(...args);
     let processedArgs = args;
     let stopProp = false;
     let result: ReturnType<Fn>;
@@ -136,8 +136,8 @@ export function func<
 
     result = fn(...processedArgs);
 
-    this._memoizedFn.getOptions().afterCall({
-      ...this._memoizedFn,
+    func._memoizedFn.getOptions().afterCall({
+      ...func._memoizedFn,
       cacheResult(value = true) {
         useCache = value;
 
@@ -162,7 +162,7 @@ export function func<
     });
 
     if (useCache === true) {
-      this._memoizedFn.getStore().set(cacheKey, result);
+      func._memoizedFn.getStore().set(cacheKey, result);
     }
 
     return result;

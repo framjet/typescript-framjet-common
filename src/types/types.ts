@@ -59,10 +59,10 @@ export interface TypesRegistry {
   Promise: Promise<any>;
   'react.element': React.ReactElement;
   'react.node': React.ReactNode;
-  JsonObject: string;
-  JsonArray: string;
-  JsonPrimitive: string;
-  JsonValue: string;
+  JsonObject: JsonObject;
+  JsonArray: JsonArray;
+  JsonPrimitive: JsonPrimitive;
+  JsonValue: JsonValue;
 }
 
 type TypesPrimitivesRegistryArrays = {
