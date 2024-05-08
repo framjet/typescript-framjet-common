@@ -19,6 +19,7 @@ export * from './strings';
 export * from './tuple';
 export * from './utils';
 export * from './union';
+export * from './weak-value-map';
 
 export type { TypesRegistry } from './types';
 export * as Types from './types';

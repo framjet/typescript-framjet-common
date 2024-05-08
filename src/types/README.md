@@ -295,3 +295,9 @@ Provides the ReadonlyDeep type for making all properties and sub-properties read
 
 Type:
 - **`ReadonlyDeep<T>`**: Makes all properties and sub-properties of a type readonly.
+
+## [weak-value-map.ts](./weak-value-map.ts)
+
+Provides a `WeakValueMap` class that implements a weak value mapping:
+
+- `WeakValueMap<K, V extends WeakKey>`: A class that implements a `Map`-like interface with weak references to the values. It supports optional cleanup callbacks and can be initialized with an iterable of entries. The class provides methods similar to the built-in `Map`, such as `get`, `set`, `delete`, `has`, `clear`, and iteration methods.

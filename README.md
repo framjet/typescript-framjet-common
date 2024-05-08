@@ -361,6 +361,13 @@ Type:
 
 - **`ReadonlyDeep<T>`**: Makes all properties and sub-properties of a type readonly.
 
+### [WeakValueMap](./src/types/weak-value-map.ts)
+
+Provides a `WeakValueMap` class that implements a weak value mapping:
+
+- `WeakValueMap<K, V extends WeakKey>`: A class that implements a `Map`-like interface with weak references to the values. It supports optional cleanup callbacks and can be initialized with an iterable of entries. The class provides methods similar to the built-in `Map`, such as `get`, `set`, `delete`, `has`, `clear`, and iteration methods.
+
+
 ## [Utility Functions](src/utils/README.md)
 
 The utility functions provides a collection of utility functions that simplify common tasks and operations in JavaScript and TypeScript projects. These utilities cover a wide range of areas, including array manipulation, boolean checks, debugging, error handling, JSON validation, logging, memoization, numeric operations, object manipulation, primitive checks, React-specific utilities, and string manipulation. By utilizing these utility functions, you can write more concise, readable, and efficient code while focusing on your core application logic.
