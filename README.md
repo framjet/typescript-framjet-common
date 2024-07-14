@@ -483,6 +483,7 @@ The utility functions provides a collection of utility functions that simplify c
 * [`Strings.convertCase(input: string, options?: ConvertCaseOptions): string`](src/utils/strings/case.ts) - Converts the case of a string based on specified options.
 * [`Strings.createCaseFirst(methodName: NoParameterMethods<String>): (input: string) => string`](src/utils/strings/create-case-first.ts) - Creates a function that changes the case of the first character of a string.
 * [`Strings.dotCase(input: string): string`](src/utils/strings/case.ts) - Converts a string to dot case.
+* [`Strings.format(format: string, ...args: unknown[]): string`](src/utils/strings/format.ts) - Formats a string like `printf` function. Supported format specifiers: `[b, c, d, f, j, o, s, x, X]`. See `man 3 printf` or `man 1 printf` for details. `j` is an extension that formats values as JSON. Precision is supported for floating point numbers.
 * [`Strings.hasUnicode(input: string): boolean`](src/utils/strings/has-unicode.ts) - Checks if a string contains Unicode symbols.
 * [`Strings.is(value: unknown): value is string`](src/utils/strings/is.ts) - Checks if a value is a string.
 * [`Strings.kebabCase(input: string): string`](src/utils/strings/case.ts) - Converts a string to kebab case.

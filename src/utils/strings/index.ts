@@ -2,6 +2,7 @@ export * from './ascii-to-array';
 export * from './case';
 export * from './cast-slice';
 export * from './create-case-first';
+export * from './format';
 export * from './has-unicode';
 export * from './is';
 export * from './lower-first';

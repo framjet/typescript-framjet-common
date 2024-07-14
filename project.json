@@ -5,16 +5,6 @@
   "projectType": "library",
   "tags": [],
   "targets": {
-    "build2": {
-      "executor": "@nx/js:tsc",
-      "outputs": ["{options.outputPath}"],
-      "options": {
-        "outputPath": "dist/framjet-common",
-        "main": "./src/index.ts",
-        "tsConfig": "./tsconfig.lib.json",
-        "assets": ["*.md"]
-      }
-    },
     "build": {
       "executor": "@nx/rollup:rollup",
       "outputs": ["{options.outputPath}"],
